@@ -1,0 +1,25 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "CAT WARS",
+    "symbol": "MEOW",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "CatWars",
+      "constructorArgs": [
+        "0x195f15f2d49d693ce265b4fb0fddbe15b1850cc1",
+        "$owner"
+      ]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "CatWars is the on-chain 1v1 cat-fight betting game in native ETH (src/CatWars.sol). Its constructor takes (address vrfWrapper, address owner_): the first argument is the requester-specified Chainlink VRF v2.5 direct-funding wrapper on Sepolia, 0x195f15F2d49d693cE265b4fB0fdDbE15b1850Cc1, and the second is $owner, the launch owner, who also becomes the initial treasury and keeper. The constructor makes no external calls and needs no post-deploy setup. CatWarsEngine (src/CatWarsEngine.sol) is an internal library compiled into CatWars and is not deployed or linked separately. The launch token LaunchToken (CAT WARS, MEOW) is a plain fixed-supply ERC-20 independent of the game; the game holds no launch tokens and bets are placed in ETH only."
+}
